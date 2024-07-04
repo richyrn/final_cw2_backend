@@ -11,7 +11,7 @@ app.use(cors());
 // Connecting to the database
 var db;
 const uri =
-  "mongodb+srv://richardadegorite:newapppass@cluster0.psgnhtb.mongodb.net/";
+  "mongodb+srv://richardadegorite:newpasss@cluster0.psgnhtb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 try {
   const client = new MongoClient(uri);
   db = client.db("webstore");
