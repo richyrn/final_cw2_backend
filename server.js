@@ -11,7 +11,7 @@ app.use(cors());
 // Connecting to the database
 var db;
 const uri =
-  "mongodb+srv://richardadegorite:newpasss@cluster0.psgnhtb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://richardadegorite:newpasss@cluster0.psgnhtb.mongodb.net/";
 try {
   const client = new MongoClient(uri);
   db = client.db("webstore");
@@ -67,7 +67,7 @@ app.post("/search/collection/lessons/", (req, res) => {
 
     db.collection("lessons")
       .find(search)
-      .sort({ [sort]: order })
+      .sort({ [sort]: orders })
       .toArray()
       .then((results) => {
         res.send(results);
